@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="logo" aria-hidden="true">✓</div>
+      <p class="eyebrow">STUDENT PRODUCTIVITY</p>
+      <h1>Student Task Manager</h1>
+      <p class="subtitle">Organize your studies, one task at a time.</p>
+    </header>
+
+    <section class="summary" aria-label="Task summary">
+      <div class="summary-card">
+        <span class="summary-number" id="totalCount">0</span>
+        <span class="summary-label">Total</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-number" id="pendingCount">0</span>
+        <span class="summary-label">Pending</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-number" id="completedCount">0</span>
+        <span class="summary-label">Completed</span>
+      </div>
+    </section>
+
+    <section class="task-panel">
+      <h2>My tasks</h2>
+      <form id="taskForm" class="add-form">
+        <label class="visually-hidden" for="taskInput">Enter a task</label>
+        <input id="taskInput" type="text" placeholder="e.g. Complete JavaScript lab" maxlength="200" autocomplete="off">
+        <button class="add-button" type="submit">+ Add Task</button>
+      </form>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <div class="tools">
+        <label class="visually-hidden" for="searchInput">Search tasks</label>
+        <input id="searchInput" type="search" placeholder="Search tasks...">
+        <label class="visually-hidden" for="filterSelect">Filter tasks</label>
+        <select id="filterSelect">
+          <option value="all">All tasks</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-label="Tasks"></ul>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">📝</div>
+        <h3>No tasks to show</h3>
+        <p>Add a task above to get started.</p>
+      </div>
+      <footer class="panel-footer">
+        <span id="footerText">You’ve got this!</span>
+        <button id="clearCompleted" class="text-button" type="button">Clear completed</button>
+      </footer>
+    </section>
+    <p class="page-note">Your tasks are saved locally in this browser.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
